@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Window Detector",
+        "description": "Select the sensors to use for window detection. Only a room and outdoor temperature sensor are required.",
+        "data": {
+          "room_temp_sensor": "Room temperature sensor",
+          "outdoor_temp_sensor": "Outdoor temperature sensor",
+          "reference_temp_sensor": "Reference indoor sensor (optional, improves accuracy)"
+        }
+      }
+    },
+    "error": {
+      "entity_not_found": "Entity not found — make sure the sensor exists and is available."
+    },
+    "abort": {
+      "already_configured": "This sensor combination is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tune detection parameters",
+        "data": {
+          "open_score_threshold": "Open threshold",
+          "close_score_threshold": "Close threshold",
+          "open_score_decay": "Open score decay",
+          "close_score_decay": "Close score decay",
+          "equilibrium_delta": "Equilibrium delta (°C)",
+          "equilibrium_suppress": "Equilibrium suppression"
+        }
+      }
+    }
+  }
+}
