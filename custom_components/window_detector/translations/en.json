@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Window Detector",
+        "description": "Select the sensors to use for window detection. Only a room and outdoor temperature sensor are required.",
+        "data": {
+          "room_temp_sensor": "Room temperature sensor",
+          "outdoor_temp_sensor": "Outdoor temperature sensor",
+          "reference_temp_sensor": "Reference indoor sensor (optional, improves accuracy)"
+        }
+      }
+    },
+    "error": {
+      "entity_not_found": "Entity not found — make sure the sensor exists and is available."
+    },
+    "abort": {
+      "already_configured": "This sensor combination is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tune detection parameters",
+        "description": "These values were calibrated from real data. Only change them if you're seeing false positives or missed detections.\n\n**Open threshold** — score needed to trigger open. Higher = fewer false positives but slower detection.\n**Close threshold** — score needed to trigger close. Higher = less likely to drop out mid-open.\n**Open decay** — how fast open evidence fades each minute (lower = faster fade).\n**Close decay** — how fast close evidence fades each minute.\n**Equilibrium delta** — when open, suppress close evidence if |room − outdoor| is below this (°C). Handles the case where the room equilibrates near outdoor temperature.\n**Equilibrium suppress** — how many close evidence points to remove per tick when equilibrated.",
+        "data": {
+          "open_score_threshold": "Open threshold",
+          "close_score_threshold": "Close threshold",
+          "open_score_decay": "Open score decay",
+          "close_score_decay": "Close score decay",
+          "equilibrium_delta": "Equilibrium delta (°C)",
+          "equilibrium_suppress": "Equilibrium suppression"
+        }
+      }
+    }
+  }
+}
